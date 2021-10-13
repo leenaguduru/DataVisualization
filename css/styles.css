@@ -1,0 +1,214 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+
+/* navigation menu style */
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:900&display=swap");
+:root {
+	--color-primary: #110ab9;
+	--color-secondary: #6f746e;
+	--duration: 1s;
+	--nav-duration: calc(var(--duration) / 4);
+	--ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+	--space: 1rem;
+	--font-primary: 'Arial', Times;
+	--font-heading: 'Helvetica', serif;
+	--font-size: 1.134rem;
+	--line-height: 1.6;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-primary);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+}
+
+h1 {
+	margin-bottom: calc(var(--space) * 3);
+	font-family: var(--font-heading);
+	font-size: calc(var(--font-size) + 6vmin);
+	line-height: calc(var(--line-height) / 1.25);
+}
+
+.menu-toggle {
+	display: flex;
+	float: right;
+}
+
+.nav-btn {
+	padding: 0;
+	margin: 0;
+	width: 4vw;
+}
+
+.nav-icon {
+	font-size: 2vw;
+	color: rgb(202, 20, 202);
+}
+
+
+/* other styles */
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.left {
+	display: flex;
+	gap: 13px;
+	float: left;
+}
+
+.bar1 {
+	fill: #74378b;
+	transition: all .4s ease;
+}
+
+.bar1:hover {
+	fill: var(--color-primary);
+}
+
+.toolTip {
+	background-color: #b4b2b2;
+	color: #714383;
+	padding: 13px;
+	border-radius: 13px;
+	position: absolute;
+}
+
+.toolTip p {
+	padding: 1;
+	margin: 1;
+}
+
+.icons-map {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
+
+.icons-map .miniLine {
+	width: 9%;
+	color: rgb(231, 225, 225);
+	text-align: center;
+}
+
+button {
+	margin-left: 3%;
+	background-color: var(--color-primary);
+	border: none;
+	color: rgb(226, 221, 221) !important;
+	width: 119px;
+	padding: 9px 9px;
+	margin-top: 3% !important;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 13px;
+}
+
+.arc path {
+	stroke: rgb(184, 178, 178);
+	stroke-width: 3px;
+}
+
+.arc grid {
+	stroke: rgb(219, 218, 218);
+	stroke-width: 2;
+	stroke-dasharray: 5, 5;
+}
+
+.arc text {
+	fill: rgb(189, 184, 184);
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.arc line {
+	stroke: rgb(240, 233, 233);
+}
+
+.bar {
+	fill: #ad705c;
+}
+
+.bar:hover {
+	fill: var(--color-primary);
+}
+
+.axis {
+	font-size: 14px;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+}
+
+.label {
+	font-size: 14px;
+}
+
+#xaxis .domain {
+	fill: none;
+	stroke: rgb(12, 12, 12);
+}
+
+#xaxis text,
+#yaxis text {
+	font-size: 13px;
+}
+
+.right {
+	text-align: end;
+	margin-right: 11%;
+}
+
+#time_chart {
+	transform: scale(0.8) !important;
+}
+
+#map_chart {
+	transform: scale(0.8) !important;
+}
+
+#pie_chart {
+	transform: scale(0.9) !important;
+	padding-top: 5%;
+	height: 69%;
+}
+
+.grid {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-gap: 9%;
+	margin-top: 5%;
+}
+
+#icons_map {
+	position: absolute;
+	width: 99%;
+	bottom: 20px;
+	left: 0;
+}
+
+#icons_map p {
+	margin: unset !important;
+}
+
+div.docspace {
+	margin: 35px;
+}
+
+.row {
+	background-color: #e7f109;
+}

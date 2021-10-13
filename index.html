@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Data Visualization - Project1 </title>
+		<link rel="stylesheet" href="css/styles.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="build/d3.v3.min.js"></script>
+		<script type="text/javascript" src="build/d3.tip.v0.6.3.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="flex col-md-12">
+				<div class="col-md-9 col-sm-12" style="text-align: right;">
+					<h3>Leena - Recreating Dr. John Snow's map using d3 - Project1 </h3>
+				</div>
+				<div style="float: right;margin-right: 2%">
+					<a href="documentation.html"><button>Abstract</button></a>
+					<a href="video.html"><button>video</button></a>
+				</div>
+			</div>
+		</header>
+		<div class="icons-map" id="icons_map"></div>
+		<div class="row">
+			<div class="flex col-md-12 center">
+				<div class="col-md-4 col-sm-12" style="text-align: center; bottom: -60px;">
+					<button id="byAge" class="button button1">Filter by Age</button>
+					<button id="byGender" class="button button1">Filter by Gender</button>
+				</div>
+			</div>
+			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="map_chart">
+				<div style="text-align: center;">Map of Soho, London</div>
+			</div>
+			<div class="flex col-md-12 center" style="top: -150px;">
+				<button style="margin:5px;" id="zoomIn" class="button button1">Zoom In</button>
+				<button style="margin:5px;" id="zoomOut" class="button button1">Zoom Out</button>
+			</div>
+			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="time_chart"><div style="text-align: center;">Timeline-Graph</div></div>
+			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="pie_chart"><div style="text-align: center;">Deaths by Age Group</div></div>
+			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="pie_gender_chart"><div style="text-align: center;">Deaths by Gender</div></div>
+		</div>
+	</body>
+</html>

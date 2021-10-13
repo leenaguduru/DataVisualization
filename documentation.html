@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LEENA GUDURU - Data Visualization Design, Analysis, & Evaluation Project-1</title>
+		<link rel="stylesheet" href="css/styles.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="build/d3.v3.min.js"></script>
+		<script type="text/javascript" src="build/d3.tip.v0.6.3.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="flex col-md-12">
+				<div class="col-md-9 col-sm-12" style="text-align: right;">
+					<h4>Dr. John Snow's map of London’s 1854 cholera epidemic Documentation</h4>
+				</div>
+				<div style="float: right;margin-right: 2%" class="dropdown">
+					<button class="btn btn-default dropdown-toggle nav-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<span class="nav-icon">&#x2630;</span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+						<li><a href="index.html">Home</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="video.html">Video</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<br>
+		<div class="docspace">
+			<h4>Introduction:</h4>
+			<p>In 19th century, Cholera was a major global scourge with frequent large-scale epidemics in European countries. Between 1848 and 1854, a series of cholera outbreaks occurred in London with large-scale loss of life. One epidemic of cholera occurred around Broad (now Broad wick Street) Street, Golden Square, in Soho, district of central London with unhygienic industries and housing. Dr. Snow, an obstetrician with an interest in many aspects of medical science, conducted pioneering investigations on cholera epidemics in in which he demonstrated that contaminated water was the key source causing the disease. His thorough investigation of an epidemic led to his conclusion that contaminated water from the Broad Street pump was the source of the disease and, consequently, the removal of the handle led to cessation of the epidemic. He further investigated about Cholera that they were receiving water from two water supply systems and one from the sewage contaminated portion of the Thames River and the other that drew its water upstream from an uncontaminated part of the river. He drew a map of London, of Water-distributed systems, he compared cholera cases among consumers of water of two suppliers depending upon their water intake. Rates of infection among clients of the distribution system drawing contaminated water far exceeded the rates among those served by the company whose water intake was from above the contaminated section of the river. This demonstration reinforced the goals of the sanitation movement, which developed sewage drainage systems and water purification systems in cities and towns in the following decades, this resulted in decrease in not only cholera but also various diseases.</p>
+			<h4>Design Process:</h4>
+			<ul>
+				<li>In this project, I have recreated Dr. John Snow’s map. I used D3 JavaScript to create the Data Visualizations</li>
+				<li>In this recreation of the original map, I have created timeline chart and the pie charts for better understanding. The timeline chart and pie chart have many elements like Age, Gender, etc., to make the interactive visualization.</li>
+				<li>In this application, the user can sort the data according to the death days, age, sex. The application shows multiple interactive visualizations of the data. </li>
+				<li>Firstly, I have started my project by analyzing the given datasets. The given datasets are pump datasets, death days dataset, death_age_sex dataset.</li>
+				<li>The pump dataset has the locations of the 13 pumps nearby that river. The death dataset has number of deaths for each day of the outbreak. The death_age_sex dataset has the location of each death in the death days. </li>
+				<li>Then analyzed the valuable information from the datasets. Initially, I did some sketches of the visualization and the interface and how to arrange as well as the display of the data.</li>
+				
+			</ul>
+			<img src="images/Image1.jpeg" alt="Fig: Designfig1" style="width: 500px;height: 450px;">
+			<h4>Design Choices:</h4>
+			<ul>
+				<p>In the beginning, I started doing sketches on the paper for the visualization by taking the datasets and their measures into consideration. There are correlations of the datasets. After understanding the datasets and their data, I tried to present my data in such a way that a person can easily lead a investigation on the cholera epidemic. Initial Visualization has a map, which has streets and pumps, locations of the deaths. I have used pie chart and timeline graph to analyze the correct amount of the deaths occurred in that area. You can also see the number of deaths occurred on a specific date. The black color represents the streets of that area and brown color to represent the location of the pump. Also mentioned the age groups in various colors so that we can easily understand and added Zoom in and Zoom out options to the map where the user can easily interact with the map. I have used various colors for the pie chart for Age group. For the other pie chart for percentage of death by gender, I have represented them in two colors, pink for the female deaths and blue for the male deaths.</p>
+			</ul>
+			<h4>Observations:</h4>
+			<ul>
+				<p>In the beginning, I started doing sketches on the paper for the visualization by taking the datasets and their measures into consideration. There are correlations of the datasets. After understanding the datasets and their data, I tried to present my data in such a way that a person can easily lead a investigation on the cholera epidemic. Initial Visualization has a map, which has streets and pumps, locations of the deaths. I have used pie chart and timeline graph to analyze the correct amount of the deaths occurred in that area. You can also see the number of deaths occurred on a specific date. The black color represents the streets of that area and brown color to represent the location of the pump. Also mentioned the age groups in various colors so that we can easily understand and added Zoom in and Zoom out options to the map where the user can easily interact with the map. I have used various colors for the pie chart for Age group. For the other pie chart for percentage of death by gender, I have represented them in two colors, pink for the female deaths and blue for the male deaths.</p>
+			</ul>
+			<h4>References:</h4>
+			<ul>
+				<li><a href="https://www.w3schools.com/graphics/svg_intro.asp">https://www.w3schools.com/graphics/svg_intro.asp</a></li>
+				<li><a href="https://www.w3schools.com/w3js/">https://www.w3schools.com/w3js/</a></li>
+				<li><a href="https://www.w3schools.com/w3css/">https://www.w3schools.com/w3css/</a></li>
+				<li><a href="https://www.toptal.com/designers/colorfilter">https://www.toptal.com/designers/colorfilter</a></li>
+				<li><a href="https://codepen.io/rstrahl/pen/yyEYBx.">https://codepen.io/rstrahl/pen/yyEYBx.</a></li>
+				<li><a href="https://www.udemy.com/data-visualize-data-with-d3js-the-easy-way/learn/v4/overview">https://www.udemy.com/data-visualize-data-with-d3js-the-easy-way/learn/v4/overview</a></li>
+				<li><a href="https://webdva.github.io/how-to-draw-a-line-in-d3js">https://webdva.github.io/how-to-draw-a-line-in-d3js</a></li>
+				<li><a href="https://d3js.org">https://d3js.org</a></li>
+				<li><a href="https://www.d3-graph-gallery.com">https://www.d3-graph-gallery.com</a></li>
+				<li><a href="https://gist.github.com/bryanhanson/11344247">https://gist.github.com/bryanhanson/11344247</a></li>
+			</ul>									
+				
+		</div>
+	</body>
+</html>
