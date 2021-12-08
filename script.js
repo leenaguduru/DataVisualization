@@ -48,8 +48,11 @@ const drawMap = async () => {
     .attr("class", "label")
     .attr("transform", `translate(${MARGINS.mapLeft}, 0)`);
 
-
-    label.selectAll("circle").data(labelData).enter().append("circle")
+  label
+    .selectAll("circle")
+    .data(labelData)
+    .enter()
+    .append("circle")
     .attr("cx", (d, i) => i * 100)
     .attr("cy", -5)
     .attr("r", 10)
@@ -101,7 +104,6 @@ const drawMap = async () => {
       .attr("stroke-width", "2px")
       .attr("stroke-linejoin", "round")
       .attr("stroke-linecap", "round")
-      //pointer events
       .attr("pointer-events", "none");
   });
   // add pumps
@@ -127,15 +129,6 @@ const drawMap = async () => {
     .attr("cx", (d) => xScale(d.x))
     .attr("cy", (d) => yScale(d.y))
     .attr("r", "4px")
-    .attr("opacity", (d) => {
-      if (SELECTED_VALUE !== null && SELECTED_VALUE === +d.gender) {
-        return 1;
-      } else if (SELECTED_VALUE === null) {
-        return 1;
-      } else {
-        return 0;
-      }
-    })
     .attr("fill", (d) => (+d.gender === 0 ? "#C94A4D" : "#AA14F0"))
     .style("cursor", "pointer")
     .on("mouseover", function (e, d) {
@@ -247,22 +240,7 @@ const drawBarChart = async () => {
     .attr("x", 0)
     .attr("y", (d) => y(d.date))
     .on("mouseover", function (e, d) {
-      d3.selectAll(".death").remove();
-      const death = d3
-        .select("#map-chart > svg")
-        .append("g")
-        .selectAll("circle")
-        .data(deaths.slice(0, +d.deaths));
-
-      death
-        .enter()
-        .append("circle")
-        .classed("death", true)
-        .attr("cx", (d) => xScale(d.x))
-        .attr("cy", (d) => yScale(d.y))
-        .attr("r", "4px")
-        .attr("fill", (d) => (+d.gender === 0 ? "#C94A4D" : "#AA14F0"))
-        .style("cursor", "pointer");
+      d3.selectAll(".death").attr("opacity", (circle, i) => (i + 1 > d.deaths ? 0 : 1));
 
       tooltip.transition().duration(200).style("opacity", 1);
       tooltip
@@ -281,22 +259,7 @@ const drawBarChart = async () => {
         .style("top", `${e.pageY - 10}px`);
     })
     .on("mouseout", function (e) {
-      d3.selectAll(".death").remove();
-      const death = d3
-        .select("#map-chart > svg")
-        .append("g")
-        .selectAll("circle")
-        .data(deaths);
-
-      death
-        .enter()
-        .append("circle")
-        .classed("death", true)
-        .attr("cx", (d) => xScale(d.x))
-        .attr("cy", (d) => yScale(d.y))
-        .attr("r", "4px")
-        .attr("fill", (d) => (+d.gender === 0 ? "#C94A4D" : "#AA14F0"))
-        .style("cursor", "pointer");
+      d3.selectAll(".death").attr("opacity", 1);
       tooltip.transition().duration(500).style("opacity", 0);
     })
     .merge(rects)
