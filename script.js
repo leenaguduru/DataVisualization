@@ -40,7 +40,7 @@ const drawMap = async () => {
     .append("g")
     .attr("transform", `translate(0, 60)`);
 
-  const labelData = ["Male", "Female", "Pump"];
+  const labelData = ["Male", "Female", "Pump", "Brewery", "Work House"];
 
   //map color and text labels
   const label = svg
@@ -61,8 +61,12 @@ const drawMap = async () => {
         return "#C94A4D";
       } else if (i === 1) {
         return "#AA14F0";
-      } else {
+      } else if (i === 2) {
         return "orange";
+      } else if (i === 3) {
+        return "blue";
+      } else {
+        return "green";
       }
     });
 
@@ -94,6 +98,44 @@ const drawMap = async () => {
     .x((d) => xScale(d.x))
     .y((d) => yScale(d.y));
 
+    
+  svg
+    .append("text")
+    .style("fill", "black")
+    .style("font-size", "35px")
+    .attr("opacity", 0.5)
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle")
+    .attr("transform", "translate(359,289) rotate(-30)")
+    .text("Broad Street");
+  svg
+    .append("text")
+    .style("fill", "black")
+    .style("font-size", "35px")
+    .attr("opacity", 0.5)
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle")
+    .attr("transform", "translate(550,150) rotate(69)")
+    .text("Dean Street");
+  svg
+    .append("text")
+    .style("fill", "black")
+    .style("font-size", "35px")
+    .attr("opacity", 0.5)
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle")
+    .attr("transform", "translate(250,85) rotate(-11)")
+    .text("Oxford Street");
+  svg
+    .append("text")
+    .style("fill", "black")
+    .style("font-size", "35px")
+    .attr("opacity", 0.5)
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle")
+    .attr("transform", "translate(190,360) rotate(59)")
+    .text("Regent Street");
+
   streets.map((street) => {
     svg
       .append("path")
@@ -118,6 +160,24 @@ const drawMap = async () => {
     .attr("fill", "orange")
     .attr("stroke", "#8A0100")
     .attr("stroke-width", "1px")
+    .style("pointer-event", "none");
+
+  svg
+    .append("circle")
+    .attr("cx", 250)
+    .attr("cy", 200)
+    .attr("r", "16px")
+    .attr("fill", "blue")
+    .attr("stroke", "none")
+    .style("pointer-event", "none");
+
+  svg
+    .append("circle")
+    .attr("cx", 350)
+    .attr("cy", 300)
+    .attr("r", "16px")
+    .attr("fill", "green")
+    .attr("stroke", "none")
     .style("pointer-event", "none");
 
   const death = svg.append("g").selectAll("circle").data(deaths);
@@ -155,6 +215,7 @@ const drawMap = async () => {
     });
 
   death.exit().remove();
+
 
   const zoom = d3
     .zoom()
