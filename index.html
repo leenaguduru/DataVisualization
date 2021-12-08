@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title> Data Visualization - Project1 </title>
-		<link rel="stylesheet" href="css/styles.css"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="build/d3.v3.min.js"></script>
-		<script type="text/javascript" src="build/d3.tip.v0.6.3.js"></script>
-		<script src="js/app.js"></script>
-	</head>
-	<body>
-		<header>
-			<div class="flex col-md-12">
-				<div class="col-md-9 col-sm-12" style="text-align: right;">
-					<h3>Leena - Recreating Dr. John Snow's map using d3 - Project1 </h3>
-				</div>
-				<div style="float: right;margin-right: 2%">
-					<a href="documentation.html"><button>Abstract</button></a>
-					<a href="video.html"><button>video</button></a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <title>D3 Charts</title>
+  </head>
+  <body>
+    <header>
+      <div style="width:800px; margin: auto; margin-top:25px;">
+        <h1>Leena - Recreating Dr. John Snow's map using d3</h1>
+      </div>
+			<div>
+				<div style="margin-left: 1100px;">
+					<a href="documentation.html"><button class="button">Abstract</button></a>
+					<a href="video.html"><button class="button">video</button></a>
 				</div>
 			</div>
 		</header>
-		<div class="icons-map" id="icons_map"></div>
-		<div class="row">
-			<div class="flex col-md-12 center">
-				<div class="col-md-4 col-sm-12" style="text-align: center; bottom: -60px;">
-					<button id="byAge" class="button button1">Filter by Age</button>
-					<button id="byGender" class="button button1">Filter by Gender</button>
-				</div>
-			</div>
-			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="map_chart">
-				<div style="text-align: center;">Map of Soho, London</div>
-			</div>
-			<div class="flex col-md-12 center" style="top: -150px;">
-				<button style="margin:5px;" id="zoomIn" class="button button1">Zoom In</button>
-				<button style="margin:5px;" id="zoomOut" class="button button1">Zoom Out</button>
-			</div>
-			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="time_chart"><div style="text-align: center;">Timeline-Graph</div></div>
-			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="pie_chart"><div style="text-align: center;">Deaths by Age Group</div></div>
-			<div class="col-md-16 col-sm-12" style="text-align: center; font-size: x-large;" id="pie_gender_chart"><div style="text-align: center;">Deaths by Gender</div></div>
-		</div>
-	</body>
+    <div class="chart-area">
+      <div class="container">
+        <div id="tooltip"></div>
+        <div class="map">
+          <div id="map-chart"></div>
+        </div>
+        <div class="bar">
+          <div id="bar-chart"></div>
+        </div>
+        <div class="pie">
+          <div id="age-pie">
+            <h3>Number of Deaths by Age Group</h3>
+          </div>
+          <div id="sex-pie">
+            <h3>Number of Deaths by Sex</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
